@@ -6,10 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-REDI_SEARCH.flushdb
+REDI_SEARCH.flushall
 
 User.delete_all
-1000.times do |i|
+10000.times do |i|
   User.create!(name: Faker::Name.name, email: Faker::Internet.email, age: i)
 end
 # => create RediSearchRails indexes
