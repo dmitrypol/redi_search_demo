@@ -8,9 +8,9 @@
 
 REDI_SEARCH.flushall
 
-User.delete_all
-10000.times do |i|
-  User.create!(name: Faker::Name.name, email: Faker::Internet.email, age: i)
+#User.delete_all
+100.times do |i|
+  User.create(name: Faker::Name.name, email: Faker::Internet.email, age: i)
 end
 # => create RediSearchRails indexes
 User.ft_create

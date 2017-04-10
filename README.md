@@ -1,13 +1,12 @@
 # Overview
 
-This a demo app to protype using RediSearchRails gem and compare it to redis-search gem.  
+This a demo app to protype using RediSearchRails gem and compare it to redis-search gem.  It uses https://github.com/soveran/ohm as primary DB.  Read https://www.sitepoint.com/semi-relational-data-modeling-redis-ohm/
 
 * install Redis and RediSearch following http://redisearch.io/Quick_Start/
-* install MongoDB (primary DB)
 * git clone && bundle
 * rake db:seed (this will do Redis.flushall so be careful)
 * Use http://localhost:3000/redis and http://localhost:3000/admin/user to view data
-* Look in Redis DB 0 for RediSearchRails and in DB 1 for redis-search
+* Look in Redis DB 1 for RediSearchRails and in DB 2 for redis-search
 * Run `rails c`
 
 ### Search via RediSearchRails
@@ -29,6 +28,5 @@ This a demo app to protype using RediSearchRails gem and compare it to redis-sea
 {"title"=>"Alexander Hayes", "id"=>{"$oid"=>"58eaa073f5740c202f61547d"}, "type"=>"User", "created_at"=>"2017-04-09T20:58:27.793Z"},
 {"title"=>"Alex Frami", "id"=>{"$oid"=>"58eaa070f5740c202f614f72"}, "type"=>"User", "created_at"=>"2017-04-09T20:58:24.782Z"}
 ]
-
 
 You are like to get different results as the seed file uses https://github.com/stympy/faker to generate random user names

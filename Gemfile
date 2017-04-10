@@ -52,7 +52,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # =>
 
-gem 'mongoid'
+gem 'ohm'
+#gem 'mongoid'
 #gem 'kaminari-mongoid'
 gem 'rails_admin'
 #gem 'foreman'
@@ -79,7 +80,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'database_cleaner'
   gem 'mock_redis'
-  gem 'mongoid-rspec'
+  #gem 'mongoid-rspec'
   gem 'rails-controller-testing'
   gem 'awesome_print'
 end
