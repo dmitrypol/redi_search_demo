@@ -53,6 +53,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # =>
 
 gem 'ohm'
+gem 'ohm-contrib'
+#gem 'kaminari'
 #gem 'mongoid'
 #gem 'kaminari-mongoid'
 gem 'rails_admin'

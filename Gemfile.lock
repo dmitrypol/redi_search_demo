@@ -168,6 +168,8 @@ GEM
       nest (~> 3)
       redic (~> 1.5.0)
       stal
+    ohm-contrib (3.0.0)
+      ohm (~> 3.0)
     puma (3.8.2)
     rack (2.0.1)
     rack-pjax (1.0.0)
@@ -320,6 +322,7 @@ DEPENDENCIES
   listen (~> 3.0.5)
   mock_redis
   ohm
+  ohm-contrib
   puma (~> 3.0)
   rails (~> 5.0.2)
   rails-controller-testing
