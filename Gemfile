@@ -57,6 +57,8 @@ gem 'ohm'
 #gem 'kaminari-mongoid'
 gem 'rails_admin'
 #gem 'foreman'
+gem 'simple_form'
+gem 'bootstrap-sass'
 
 gem 'redis'
 gem 'hiredis'
