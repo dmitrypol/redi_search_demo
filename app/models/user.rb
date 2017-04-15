@@ -1,19 +1,19 @@
 class User < ApplicationRecord
-  # include Mongoid::Document
-  # include Mongoid::Timestamps::Short
-  # field :name
-  # field :email
-  # field :age, type: Integer
 
   include Ohm::Timestamps
   include Ohm::DataTypes
   include Ohm::Callbacks
-  attribute :name
+  attribute :f_name
+  attribute :l_name
   attribute :email
   attribute :age, Type::Integer
-  index :name
+  attribute :status
+  index :f_name
+  index :l_name
   index :email
   index :age
+  index :status
+  #unique :email
 
   include RediSearchRails
   redi_search_schema   name: 'TEXT', email: 'TEXT', age: 'NUMERIC'

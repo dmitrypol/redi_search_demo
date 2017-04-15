@@ -61,6 +61,7 @@ gem 'rails_admin'
 #gem 'foreman'
 gem 'simple_form'
 gem 'bootstrap-sass'
+#gem 'enumerize'
 
 gem 'redis'
 gem 'hiredis'

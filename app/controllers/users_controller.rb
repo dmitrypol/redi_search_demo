@@ -5,6 +5,12 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+    if params[:search].present?
+      params[:search].each do |key, value|
+        # => User.find(age: 18, email: 'foo@bar.com')
+        @users = @users.find("#{key}": value) if value.present?
+      end
+    end
   end
 
   # GET /users/1
@@ -54,7 +60,7 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
-    @user.destroy
+    @user.delete  #.destroy
     respond_to do |format|
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
       format.json { head :no_content }
@@ -70,6 +76,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email, :age)
+      params.require(:user).permit(:f_name, :l_name, :email, :age, :status)
     end
 end

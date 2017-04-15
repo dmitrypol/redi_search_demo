@@ -10,7 +10,12 @@ REDI_SEARCH.flushall
 
 #User.delete_all
 100.times do |i|
-  User.create(name: Faker::Name.name, email: Faker::Internet.email, age: rand(10..50))
+  User.create(f_name: Faker::Name.first_name,
+              l_name: Faker::Name.last_name,
+              email: Faker::Internet.email,
+              age: rand(10..50),
+              status: USER_STATUS.sample
+              )
 end
 # => create RediSearchRails indexes
 User.ft_create
