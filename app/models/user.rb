@@ -3,13 +3,11 @@ class User < ApplicationRecord
   include Ohm::Timestamps
   include Ohm::DataTypes
   include Ohm::Callbacks
-  attribute :f_name
-  attribute :l_name
+  attribute :name
   attribute :email
   attribute :age, Type::Integer
   attribute :status
-  index :f_name
-  index :l_name
+  index :name
   index :email
   index :age
   index :status

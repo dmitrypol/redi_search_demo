@@ -1,8 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <%= simple_form_for :search, method: :get, html: { class: 'form-inline' } do |f| %>
-  <%= f.input :f_name, required: false %>
-  <%= f.input :l_name, required: false %>
+  <%= f.input :name, required: false %>
   <%= f.input :email, required: false %>
   <%= f.input :age, as: :integer, input_html: { min: '1' }, required: false %>
   <%= f.input :status, collection: USER_STATUS, required: false %>
@@ -15,8 +14,7 @@
   <thead>
     <tr>
       <th>ID</th>
-      <th>First name</th>
-      <th>Last name</th>
+      <th>Name</th>
       <th>Email</th>
       <th>Age</th>
       <th>Status</th>
@@ -28,8 +26,7 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= user.id %></td>
-        <td><%= user.f_name %></td>
-        <td><%= user.l_name %></td>
+        <td><%= user.name %></td>
         <td><%= user.email %></td>
         <td><%= user.age %></td>
         <td><%= user.status %></td>
