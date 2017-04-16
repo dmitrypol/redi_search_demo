@@ -11,6 +11,10 @@ class UsersController < ApplicationController
         @users = @users.find("#{key}": value) if value.present?
       end
     end
+    if params[:redi_search].present?
+      keyword = params[:redi_search][:text]
+      #@users = User.ft_search(keyword)
+    end
   end
 
   # GET /users/1
@@ -76,6 +80,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email, :age, :status)
+      params.require(:user).permit(:name, :email, :age, :status, :roles)
     end
 end

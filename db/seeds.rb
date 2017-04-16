@@ -13,7 +13,8 @@ REDI_SEARCH.flushall
   User.create(name: Faker::Name.name,
               email: Faker::Internet.email,
               age: rand(10..50),
-              status: USER_STATUS.sample
+              status: USER_STATUS.sample,
+              roles: [USER_ROLES.sample],
               )
 end
 # => create RediSearchRails indexes
