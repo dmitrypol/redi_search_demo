@@ -1,1 +1,1 @@
-REDI_SEARCH = Redis.new(db: 1)
+REDI_SEARCH = Redis.new(db: 0)
