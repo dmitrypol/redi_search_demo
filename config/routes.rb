@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
-  root 'users#index'
+  root 'home#index'
   get 'home/index'
 
   resources :users
+  resources :articles
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   mount RedisBrowser::Web => '/redis'

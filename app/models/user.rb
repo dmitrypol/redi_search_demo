@@ -9,6 +9,8 @@ class User < ApplicationRecord
   attribute :age, Type::Integer
   attribute :status
   attribute :roles, Type::Array
+  collection :articles, :Article
+
   index :name
   index :email
   index :age
