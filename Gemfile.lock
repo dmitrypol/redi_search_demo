@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/dmitrypol/redi_search_rails.git
-  revision: aa004aea521b1a7ce2bebb40a8b54c7250a68dc6
+  revision: 05f2d45b2212493d3869f06db2ed9bcd0df4e393
   specs:
     redi_search_rails (0.1.2)
       activesupport (>= 4.2.8)

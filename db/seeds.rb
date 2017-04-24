@@ -9,7 +9,7 @@
 REDI_SEARCH.flushall
 
 #User.delete_all
-100.times do |i|
+1000.times do |i|
   User.create(name: Faker::Name.name,
               email: Faker::Internet.email,
               age: rand(10..50),
