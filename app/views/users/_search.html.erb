@@ -1,0 +1,11 @@
+<br>
+
+<%= simple_form_for :search, method: :get, html: { class: 'form-inline' } do |f| %>
+  <%= f.input :name, required: false, placeholder: 'name', label: false %>
+  <%= f.input :email, required: false, placeholder: 'email', label: false %>
+  <%= f.input :age, as: :integer, input_html: { min: '1' }, required: false,
+    placeholder: 'age', label: false %>
+    <%= f.input :status, collection: USER_STATUS, required: false, label: false %>
+    <%= f.input :roles, collection: USER_ROLES, required: false, label: false %>
+  <%= f.button :submit, 'Search', class: 'btn btn-info' %>
+<% end %>

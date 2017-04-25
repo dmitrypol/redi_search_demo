@@ -4,7 +4,14 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
+    if params[:redi_search].present?
+      @keyword = params[:redi_search][:keyword]
+      @offset = params[:redi_search][:offset]
+      @num = params[:redi_search][:num]
+      @articles = Article.ft_search_format(keyword: @keyword, offset: @offset, num: @num)
+    else
+      @articles = Article.all
+    end
   end
 
   # GET /articles/1

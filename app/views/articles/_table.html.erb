@@ -1,0 +1,34 @@
+Total: <%= articles.count %>
+
+<table class='table'>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Body</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% articles.each do |article| %>
+      <tr>
+        <td><%= article.id %></td>
+        <td><%= article.title %></td>
+        <td><%= article.body %></td>
+        <td>
+          <% if article.user_id.present? %>
+            <%= link_to article.user.name, user_path(article.user.id) %>
+          <% end %>
+        </td>
+        <td><%= link_to 'Show', article_path(article.id), class: 'btn btn-sm btn-success' %></td>
+        <td><%#= link_to 'Edit', edit_article_path(article.id) %></td>
+        <td><%= link_to 'Destroy', article_path(article.id), method: :delete,
+          data: { confirm: 'Are you sure?' },  class: 'btn btn-sm btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

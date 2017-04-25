@@ -1,0 +1,11 @@
+<br>
+
+<%= simple_form_for :redi_search, method: :get, html: { class: 'form-inline' } do |f| %>
+  <%= f.input :keyword, placeholder: 'keyword', label: false, required: true,
+    input_html: { value: @keyword } %>
+  <%= f.input :offset,  placeholder: 'offset',  label: false, as: :integer,
+    input_html: { min: '0', value: @offset } %>
+  <%= f.input :num,     placeholder: 'num',     label: false, as: :integer,
+    input_html: { min: '1', value: @num } %>
+  <%= f.button :submit, 'RediSearch', class: 'btn btn-info' %>
+<% end %>

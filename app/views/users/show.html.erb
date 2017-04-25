@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>ID:</strong>
   <%= @user.id %>
@@ -39,6 +37,13 @@
   <strong>Updated at:</strong>
   <%= @user.updated_at %>
 </p>
+
+<p>
+  <strong>Articles:</strong>
+  <%= @user.articles.count %>
+</p>
+
+<%= render 'articles/table', articles: @user.articles %>
 
 <%#= link_to 'Edit', edit_user_path(@user.id) %> |
 <%= link_to 'Back', users_path, class: 'btn btn-info' %>

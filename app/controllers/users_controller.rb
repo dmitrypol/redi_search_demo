@@ -12,8 +12,10 @@ class UsersController < ApplicationController
       end
     end
     if params[:redi_search].present?
-      keyword = params[:redi_search][:text]
-      #@users = User.ft_search(keyword)
+      @keyword = params[:redi_search][:keyword]
+      @offset = params[:redi_search][:offset]
+      @num = params[:redi_search][:num]
+      @users = User.ft_search_format(keyword: @keyword, offset: @offset, num: @num)
     end
   end
 
