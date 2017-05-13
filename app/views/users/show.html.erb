@@ -15,27 +15,27 @@
 
 <p>
   <strong>Age:</strong>
-  <%= @user.age %>
+  <%= @user.try(:age) %>
 </p>
 
 <p>
   <strong>Status:</strong>
-  <%= @user.status %>
+  <%= @user.try(:status) %>
 </p>
 
 <p>
   <strong>Roles:</strong>
-  <%= @user.roles %>
+  <%= @user.try(:roles) %>
 </p>
 
 <p>
   <strong>Created at:</strong>
-  <%= @user.created_at %>
+  <%= @user.try(:created_at) %>
 </p>
 
 <p>
   <strong>Updated at:</strong>
-  <%= @user.updated_at %>
+  <%= @user.try(:updated_at) %>
 </p>
 
 <p>

@@ -62,6 +62,7 @@ gem 'rails_admin'
 gem 'simple_form'
 gem 'bootstrap-sass'
 #gem 'enumerize'
+gem 'therubyracer', platforms: :ruby
 
 gem 'redis'
 gem 'hiredis'
