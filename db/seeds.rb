@@ -11,17 +11,21 @@ REDI_SEARCH.flushall
 #User.delete_all
 ap "begin User                      #{Time.now}"
 #User.create(name: "john smith", email: "john.smith@gmail.com")
-100000.times do |i|
+1000.times do |i|
   User.create(name: Faker::Name.name,
               email: Faker::Internet.email,
-              #age: rand(10..50),
-              #status: USER_STATUS.sample,
+              age: rand(10..50),
+              height: rand(4..6),
+              status: USER_STATUS.sample,
+              location: Faker::Address.city,
               #roles: [USER_ROLES.sample],
               )
 end
 ap "begin User RediSearchRails      #{Time.now}"
 User.ft_create
 User.ft_add_all
+User.ft_sugadd_all(attribute: 'name')
+User.ft_sugadd_all(attribute: 'email')
 ap "complete User RediSearchRails   #{Time.now}"
 
 
